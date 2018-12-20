@@ -29,10 +29,9 @@ const user = {
     Login({ commit }, userInfo) {
       const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
-        login(username, userInfo.password).then(response => {
-          const data = response.data
-          setToken(data.token)
-          commit('SET_TOKEN', data.token)
+        login(username, userInfo.password).then(data => {
+          setToken(data.access_token)
+          commit('SET_TOKEN', data.access_token)
           resolve()
         }).catch(error => {
           reject(error)
@@ -43,12 +42,11 @@ const user = {
     // 获取用户信息
     GetInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
-        getInfo(state.token).then(response => {
-          const data = response.data
-          commit('SET_ROLES', data.roles)
-          commit('SET_NAME', data.name)
+        getInfo(state.token).then(data => {
+          commit('SET_ROLES', ['admin'])
+          commit('SET_NAME', data.userName)
           commit('SET_AVATAR', data.avatar)
-          resolve(response)
+          resolve(data)
         }).catch(error => {
           reject(error)
         })

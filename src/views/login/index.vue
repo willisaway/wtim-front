@@ -22,14 +22,6 @@
           登录
         </el-button>
       </el-form-item>
-      <div class="tips">
-        <span style="margin-right:20px;">账户: admin</span>
-        <span> 密码: admin</span>
-      </div>
-      <div class="tips">
-        <span style="margin-right:20px;">账户: editor</span>
-        <span> 密码: editor</span>
-      </div>
     </el-form>
   </div>
 </template>
@@ -56,8 +48,8 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: 'admin'
+        username: '',
+        password: ''
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -108,6 +100,7 @@ export default {
     input:-webkit-autofill {
       -webkit-box-shadow: 0 0 0px 1000px #293444 inset !important;
       -webkit-text-fill-color: #fff !important;
+      box-shadow: #293444
     }
     input {
       background: transparent;

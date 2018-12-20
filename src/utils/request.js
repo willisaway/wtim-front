@@ -11,8 +11,12 @@ const service = axios.create({
 
 // request拦截器
 service.interceptors.request.use(config => {
+  if (config.url === '/oauth/token') {
+    config.headers['Authorization'] = 'Basic Y2xpZW50OmNsaWVudA=='
+  }
   if (store.getters.token) {
-    config.headers['X-Token'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+    config.headers['access_token'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
+    config.headers['Authorization'] = 'bearer ' + getToken()
   }
   return config
 }, error => {
@@ -29,11 +33,11 @@ service.interceptors.response.use(
   */
     const res = response.data
     if (res.code !== 20000) {
-      Message({
-        message: res.data,
-        type: 'error',
-        duration: 5 * 1000
-      })
+      // Message({
+      //   message: res.data,
+      //   type: 'error',
+      //   duration: 5 * 1000
+      // })
 
       // 50008:非法的token; 50012:其他客户端登录了;  50014:Token 过期了;
       if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
@@ -47,7 +51,8 @@ service.interceptors.response.use(
           })
         })
       }
-      return Promise.reject('error')
+      // return Promise.reject('error')
+      return response.data
     } else {
       return response.data
     }

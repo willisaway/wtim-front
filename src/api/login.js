@@ -2,21 +2,23 @@ import request from '@/utils/request'
 
 export function login(username, password) {
   return request({
-    url: '/user/login' + '?username=' + username,
-    method: 'post'
+    url: '/oauth/token',
+    method: 'post',
+    params: { username: username, password: password, grant_type: 'password' }
   })
 }
 
 export function getInfo(token) {
   return request({
-    url: '/user/info' + '?username=' + token,
+    url: '/user/get' + '?access_token=' + token,
     method: 'get'
   })
 }
 
-export function logout() {
+export function logout(token) {
   return request({
-    url: '/user/logout',
-    method: 'post'
+    url: '/logout/exit',
+    method: 'post',
+    params: { token: token }
   })
 }
