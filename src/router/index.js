@@ -20,74 +20,65 @@ export const constantRouterMap = [
     }]
   },
   {
-    path: '/example',
+    path: '/worktrack',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Table', icon: 'table' },
+    redirect: '/worktrack/1',
+    name: '工作跟踪管理',
+    meta: { title: '工作跟踪管理', icon: 'table' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'complexTable' }
+        path: '1',
+        name: '1',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '支部首长' }
       },
       {
-        path: 'fullcalendar',
-        name: 'Fullcalendar',
-        component: () => import('@/views/fullcalendar/fullcalendar'),
-        meta: { title: 'calendar' }
-      }
-    ]
-  },
-  {
-    path: '/tab',
-    name: 'tab',
-    component: Layout,
-    meta: { icon: 'example' },
-    children: [
-      {
-        path: 'Tabs',
-        name: 'Tabs',
-        component: () => import('@/views/tab/index'),
-        meta: { title: 'Tabs', icon: 'tab' }
-      }
-    ]
-  },
-  // 表单
-  {
-    path: '/form',
-    component: Layout,
-    redirect: '/table/BaseForm',
-    name: 'form',
-    meta: {
-      title: 'form',
-      icon: 'form'
-    },
-    children: [
-      {
-        path: 'Form',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'BaseForm' }
+        path: '2',
+        name: '2',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '参谋部' }
       },
       {
-        path: 'qiniu',
-        name: 'qiniu',
-        component: () => import('@/views/form/qiniu'),
-        meta: { title: 'qiniu' }
+        path: '3',
+        name: '3',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '政治工作处' }
       },
       {
-        path: 'quillEditor',
-        name: 'quillEditor',
-        component: () => import('@/views/form/quillEditor'),
-        meta: { title: 'quillEditor' }
+        path: '4',
+        name: '4',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '保障处' }
       },
       {
-        path: 'tinymce',
-        name: 'tinymce',
-        component: () => import('@/views/form/tinymce'),
-        meta: { title: 'tinymce' }
+        path: '5',
+        name: '5',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '大队' }
+      },
+      {
+        path: '6',
+        name: '6',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '中队' }
+      },
+      {
+        path: '7',
+        name: '7',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '中队-军事' }
+      },
+      {
+        path: '8',
+        name: '8',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '中队-政治' }
+      },
+      {
+        path: '9',
+        name: '9',
+        component: () => import('@/views/worktrack/index'),
+        meta: { title: '中队-后勤' }
       }
     ]
   }
@@ -100,93 +91,5 @@ export default new Router({
 })
 
 export const asyncRouterMap = [
-  {
-    path: '/icon',
-    component: Layout,
-    name: 'icons',
-    meta: { roles: ['admin'] },
-    children: [
-      {
-        path: 'iconIndex',
-        name: 'iconIndex',
-        component: () => import('@/views/svg-icon/index'),
-        meta: { title: 'svgicons', icon: 'icon', roles: ['admin'] }
-      }
-    ]
-  },
-  // 树形组件
-  {
-    path: '/treeMen',
-    component: Layout,
-    redirect: 'noredirect',
-    meta: {
-      title: 'treeMen',
-      icon: 'TreeMean'
-    },
-    children: [
-      {
-        path: 'treeMen',
-        name: 'treeMen-demo',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'treeMen', icon: 'TreeMean' }
-      }
-    ]
-  },
-  // 组件
-  {
-    path: '/components',
-    component: Layout,
-    redirect: '/components/dragKanban',
-    name: 'Components',
-    meta: {
-      title: 'Components',
-      icon: 'component'
-    },
-    children: [
-      {
-        path: 'componentsmixin',
-        name: 'mixin',
-        component: () => import('@/views/components/backToTop'),
-        meta: { title: 'backToTop' }
-      },
-      {
-        path: 'mixin',
-        name: 'componentMixin',
-        component: () => import('@/views/components/mixin'),
-        meta: { title: 'componentMixin' }
-      }
-    ]
-  },
-  {
-    path: '/excel',
-    component: Layout,
-    redirect: '/excel/exportExcel',
-    name: 'excel',
-    meta: {
-      title: 'excel',
-      icon: 'excel'
-    },
-    children: [
-      {
-        path: 'exportExcel',
-        name: 'exportExcel',
-        component: () => import('@/views/excel/exportExcel'),
-        meta: { title: 'exportExcel', icon: 'excel' }
-      }
-    ]
-  },
-  {
-    path: '/i18n-demo',
-    component: Layout,
-    redirect: 'i18n-demo',
-    children: [
-      {
-        path: 'indexLang',
-        name: 'indexLang',
-        component: () => import('@/views/i18n-demo/indexLang'),
-        meta: { title: 'i18n', icon: 'international' }
-      }
-    ]
-  },
   { path: '*', redirect: '/404', hidden: true }
 ]

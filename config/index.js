@@ -35,7 +35,7 @@ module.exports = {
     // in the browser.
     showEslintErrorsInOverlay: false,
     devtool: 'source-map',
-    cacheBusting: false,
+    cacheBusting: true,
     cssSourceMap: false,
   },
 
