@@ -8,7 +8,7 @@
         </el-menu-item>
       </router-link>
 
-      <el-submenu v-else :index="item.name||item.path">
+      <el-submenu v-else :index="item.path">
         <template slot="title">
           <svg-icon v-if="item.meta&&item.meta.icon" :icon-class="item.meta.icon"></svg-icon>
           <span v-if="item.meta&&item.meta.title" slot="title">{{generateTitle(item.meta.title)}}</span>

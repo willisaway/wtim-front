@@ -6,11 +6,11 @@
       </pan-thumb>
       <div class="info-container">
         <span class="display_name">{{name}}</span>
-        <span style='font-size:20px;padding-top:20px;display:inline-block;'>欢迎来到Vue后台管理系统</span>
+        <span style='font-size:20px;padding-top:20px;display:inline-block;'>欢迎来到工作落实跟踪管理系统</span>
       </div>
     </div>
     <div>
-      <img class="emptyGif" :src="emptyGif">
+      <!-- <img class="emptyGif" :src="emptyGif"> -->
     </div>
   </div>
 </template>

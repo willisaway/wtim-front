@@ -24,7 +24,7 @@
       </el-form>
     </el-col>
     <!--列表-->
-    <el-table :height="tableHeight" :data="tableList" v-loading="listLoading" border element-loading-text="拼命加载中" style="width: 100%;" :row-style="tableRowStyle">
+    <el-table :height="tableHeight" :data="tableList" v-loading="listLoading" border element-loading-text="拼命加载中" style="width: 100%;" :row-class-name="tableRowClassName" :highlight-current-row="true">
       <el-table-column type="expand">
         <template slot-scope="props">
           <el-form label-position="left" inline class="demo-table-expand">
@@ -290,6 +290,13 @@
   .form-content {
     margin: 20px;
   }
+  /* .current-row > td {
+    background: #218af3 !important;
+  } */
+  .el-table .important-row {
+    background: #FFF68F !important;
+  }
+  tr:hover > td{background-color: #D4D4D4 !important}
 </style>
 
 <script>
@@ -504,11 +511,11 @@ export default {
       }
       return moment(date).format('YYYY-MM-DD')
     },
-    tableRowStyle({ row, rowIndex }) {
+    tableRowClassName({ row, rowIndex }) {
       var impFlag = row['impFlag']
       var style = ''
       if (impFlag === '1') {
-        style = 'background-color: #FFF68F'
+        style = 'important-row'
       }
       return style
     },
