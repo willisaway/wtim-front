@@ -62,8 +62,11 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .navbar {
+  background: url('~@/assets/images/index_head.png') center center;
+  background-size: 100% 100%;
   height: 50px;
   line-height: 50px;
+  color: white!important;
   border-radius: 0px !important;
   .right-menu {
     float: right;
@@ -71,7 +74,7 @@ export default {
       .nx-help {
         display: inline-block;
         vertical-align: top;
-    }
+    };
   }
   .hamburger-container {
     line-height: 58px;

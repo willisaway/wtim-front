@@ -6,7 +6,7 @@
       </pan-thumb>
       <div class="info-container">
         <span class="display_name">{{name}}</span>
-        <span style='font-size:20px;padding-top:20px;display:inline-block;'>欢迎来到工作落实跟踪管理系统</span>
+        <span style='font-size:20px;padding-top:20px;display:inline-block;'>欢迎来到基层中队工作落实跟踪管理平台</span>
       </div>
     </div>
     <div>
@@ -44,6 +44,8 @@ export default {
 	}
 
 	.dashboard-editor-container {
+		background: url('~@/assets/images/dashboard_bg.jpg') center center;
+		background-size: 100% 100%;
 		background-color: #e3e3e3;
 		min-height: 100vh;
 		margin-top: -50px;

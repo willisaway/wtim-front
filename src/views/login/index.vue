@@ -2,7 +2,7 @@
   <div class="login-container">
     <el-form autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left" label-width="0px"
       class="card-box login-form">
-      <h3 class="title">工作落实管理平台</h3>
+      <h3 class="title">基层中队工作落实跟踪管理平台</h3>
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
           <svg-icon icon-class="user" />
@@ -22,6 +22,7 @@
           登录
         </el-button>
       </el-form-item>
+      <div class="originDesc">抚松中队研制</div>
     </el-form>
   </div>
 </template>
@@ -89,14 +90,20 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss">
   $bg:#2d3a4b;
-  $dark_gray:#889aa4;
-  $light_gray:#eee;
-
+  $dark_gray: rgb(17, 15, 15);
+  $light_gray:rgb(230, 59, 59);
+  .originDesc {
+    font: $dark_gray;
+    font-size: small;
+    text-align: center;
+  }
   .login-container {
     position: fixed;
     height: 100%;
     width:100%;
-    background-color: $bg;
+    // background-color: $bg;
+    background: url('~@/assets/images/login.jpg') center center;
+    background-size: 100% 100%;
     input:-webkit-autofill {
       -webkit-box-shadow: 0 0 0px 1000px #293444 inset !important;
       -webkit-text-fill-color: #fff !important;
@@ -110,6 +117,10 @@ export default {
       padding: 12px 5px 12px 15px;
       color: $light_gray;
       height: 47px;
+    }
+    input::-webkit-input-placeholder {
+      /* placeholder颜色  */
+      color: rgb(116, 67, 67);
     }
     .el-input {
       display: inline-block;
@@ -138,12 +149,13 @@ export default {
       margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
+      white-space: nowrap;
     }
     .login-form {
       position: absolute;
       left: 0;
       right: 0;
-      width: 400px;
+      width: 430px;
       padding: 35px 35px 15px 35px;
       margin: 120px auto;
     }

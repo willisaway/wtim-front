@@ -23,14 +23,14 @@ export const constantRouterMap = [
     path: '/worktrack',
     component: Layout,
     redirect: '/worktrack/1',
-    name: '工作跟踪管理',
-    meta: { title: '工作跟踪管理', icon: 'table' },
+    name: '工作落实跟踪管理',
+    meta: { title: '工作落实跟踪管理', icon: 'table' },
     children: [
       {
         path: '1',
         name: '1',
         component: () => import('@/views/worktrack/index'),
-        meta: { title: '支部首长' }
+        meta: { title: '支队首长' }
       },
       {
         path: '2',
