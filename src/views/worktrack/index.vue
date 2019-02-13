@@ -521,7 +521,7 @@ export default {
     },
     uploadSuccess(response, file, fileList) {
       if (!(response.returnValue && response.returnValue < 0)) {
-        this.queryFileLocal({ businessId: this.temp.businessId, businessCode: this.temp.businessCode })
+        this.queryFileLocal({ businessId: response[0].returnPara.affix.businessId, businessCode: 'BN_WORK_TRACK' })
       }
     },
     previewFile(file) {
@@ -529,7 +529,6 @@ export default {
     },
     queryFileLocal: function(condition) {
       queryFile(condition).then(response => {
-        this.fileList.上报材料 = []
         this.fileList.上报材料 = []
         this.fileList.视频照片 = []
         this.fileList.新闻稿 = []

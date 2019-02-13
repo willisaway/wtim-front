@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(username, password) {
   return request({
-    url: '/oauth/token',
+    url: '/SERVICE-AUTH/oauth/token',
     method: 'post',
     params: { username: username, password: password, grant_type: 'password' }
   })
@@ -10,15 +10,15 @@ export function login(username, password) {
 
 export function getInfo(token) {
   return request({
-    url: '/user/get' + '?access_token=' + token,
+    url: '/SERVICE-AUTH/user/get' + '?access_token=' + token,
     method: 'get'
   })
 }
 
 export function logout(token) {
   return request({
-    url: '/logout/exit',
+    url: '/SERVICE-AUTH/logout/exit',
     method: 'post',
-    params: { token: token }
+    params: { access_token: token }
   })
 }

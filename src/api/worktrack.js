@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function queryList(data) {
   return request({
-    url: '/worktrack/private/query',
+    url: '/SERVICE-WTIM/worktrack/private/query',
     method: 'post',
     data
   })
@@ -10,7 +10,7 @@ export function queryList(data) {
 
 export function updateOne(data) {
   return request({
-    url: '/worktrack/private/update',
+    url: '/SERVICE-WTIM/worktrack/private/update',
     method: 'post',
     data
   })

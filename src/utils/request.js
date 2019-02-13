@@ -11,7 +11,7 @@ const service = axios.create({
 
 // request拦截器
 service.interceptors.request.use(config => {
-  if (config.url === '/oauth/token') {
+  if (config.url === '/SERVICE-AUTH/oauth/token') {
     config.headers['Authorization'] = 'Basic Y2xpZW50OmNsaWVudA=='
   }
   if (store.getters.token) {
